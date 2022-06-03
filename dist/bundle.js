@@ -16,7 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! three */ \"./node_modules/_three@0.141.0@three/build/three.module.js\");\n\r\nconsole.log(\"hello world\")\r\nconst scene = new three__WEBPACK_IMPORTED_MODULE_0__.Scene();\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! three */ \"./node_modules/_three@0.141.0@three/build/three.module.js\");\n\r\nconsole.log(\"hello world\")\r\nconst scene = new three__WEBPACK_IMPORTED_MODULE_0__.Scene();\r\nconst camera = new three__WEBPACK_IMPORTED_MODULE_0__.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );\r\n\r\nconst renderer = new three__WEBPACK_IMPORTED_MODULE_0__.WebGLRenderer();\r\nrenderer.setSize( window.innerWidth, window.innerHeight );\r\ndocument.body.appendChild( renderer.domElement );\r\nconst geometry = new three__WEBPACK_IMPORTED_MODULE_0__.BoxGeometry();\r\n\t\t\tconst material = new three__WEBPACK_IMPORTED_MODULE_0__.MeshBasicMaterial( { color: 0x00ff00 } );\r\n\t\t\tconst cube = new three__WEBPACK_IMPORTED_MODULE_0__.Mesh( geometry, material );\r\n\t\t\tscene.add( cube );\r\n\r\n\t\t\tcamera.position.z = 5;\r\n\r\n\t\t\tfunction animate() {\r\n\t\t\t\trequestAnimationFrame( animate );\r\n\r\n\t\t\t\tcube.rotation.x += 0.01;\r\n\t\t\t\tcube.rotation.y += 0.01;\r\n\r\n\t\t\t\trenderer.render( scene, camera );\r\n\t\t\t};\r\n\r\n\t\t\tanimate();\r\n\r\n\r\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
