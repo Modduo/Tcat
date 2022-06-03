@@ -1,14 +1,16 @@
 import * as THREE from 'three';
 import  img from './texure/sprite.png'
+import  musicfoo from './audio/glitch.mp3'
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { GlitchPass } from 'three/examples/jsm/postprocessing/GlitchPass.js';
+import  {kk} from  './utils/clickevent.js'
 
 console.log("hello world")
-
+kk.start();
 const width = window.innerWidth;
 const height = window.innerHeight;
-
+const listener = new THREE.AudioListener();
 			
 const cameraOrtho = new THREE.OrthographicCamera( - width / 2, width / 2, height / 2, - height / 2, 1, 10 );
 				cameraOrtho.position.z = 10;
@@ -26,7 +28,17 @@ const material =new THREE.SpriteMaterial({
   map: map,
 });
 
+cameraOrtho.add(listener);
+const sound = new THREE.Audio( listener );
 
+// load a sound and set it as the Audio object's buffer
+const audioLoader = new THREE.AudioLoader();
+audioLoader.load( musicfoo, function( buffer ) {
+	sound.setBuffer( buffer );
+	sound.setLoop( true );
+	sound.setVolume( 0.5 );
+	sound.play();
+});
 const sprite = new THREE.Sprite( material );
 
 scene.add( sprite );

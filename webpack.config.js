@@ -9,14 +9,27 @@ module.exports = {
   module:{
 		rules:[
 			{
-				test:/\.(jpg|png)$/,
+				test:/\.(jpg|png|mp3)$/,
 				 use: [
           {
             loader: 'file-loader',
-            options: {}
+            options: {name: '[name][hash:5].[ext]'}
           }
         ]
+			},
+			{
+				test:/\.js$/,
+				exclude: /node_modules/,
+				 use: {
+        loader: 'babel-loader',
+        options: {
+          presets: ['@babel/preset-env']
+        }
+      }
+				
 			}
+
+			
 		]
 	}
   

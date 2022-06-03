@@ -1,6 +1,12 @@
 {
   "dependencies": {
+    "bable-loader": "^0.0.1-security",
     "file-loader": "^6.2.0",
     "three": "^0.141.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.2",
+    "@babel/preset-env": "^7.18.2",
+    "babel-loader": "^8.2.5"
   }
 }
