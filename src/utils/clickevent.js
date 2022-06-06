@@ -1,4 +1,4 @@
-class kk{
+class Tcat_tools{
 	static start()
 {
 	
@@ -10,7 +10,7 @@ document.addEventListener("click", function(){
 }
 
 module.exports={
-	kk,
+	Tcat_tools,
 	
 }
 

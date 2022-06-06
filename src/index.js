@@ -4,10 +4,10 @@ import  musicfoo from './audio/glitch.mp3'
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { GlitchPass } from 'three/examples/jsm/postprocessing/GlitchPass.js';
-import  {kk} from  './utils/clickevent.js'
+import  {Tcat_tools} from  './utils/clickevent.js'
 
 console.log("hello world")
-kk.start();
+Tcat_tools.start();
 const width = window.innerWidth;
 const height = window.innerHeight;
 const listener = new THREE.AudioListener();
