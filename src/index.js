@@ -39,6 +39,8 @@ audioLoader.load( musicfoo, function( buffer ) {
 	sound.setVolume( 0.5 );
 	sound.play();
 });
+			var axes = new THREE.AxesHelper(200);
+			scene.add(axes);
 const sprite = new THREE.Sprite( material );
 
 scene.add( sprite );
